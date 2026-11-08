@@ -53,9 +53,9 @@
         "Custom CMS concept",
         "AI-assisted planning and development"
       ],
-      "link": "https://opervyn.github.io",
+      "link": "https://opervyn.netlify.app",
       "label": "Visit project",
-      "featured": true
+      "featured": "true"
     },
     {
       "name": "Personal Portfolio & CMS",
@@ -69,7 +69,7 @@
       ],
       "link": "https://github.com/mohammadsabbir-hub",
       "label": "GitHub profile",
-      "featured": true
+      "featured": "true"
     }
   ],
   "skills": [
