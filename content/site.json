@@ -1,162 +1,45 @@
 {
-  "site": {
-    "name": "Mohammad Sabbir Hossain",
-    "role": "E-commerce Operations | Product Content | Quality Control",
-    "location": "Sylhet, Bangladesh",
-    "email": "fxsabbirhossain@gmail.com",
-    "phone": "+8801330751277",
-    "linkedin": "https://linkedin.com/in/fxsabbirhossain",
-    "github": "https://github.com/mohammadsabbir-hub",
-    "opervyn": "https://opervyn.github.io",
-    "portrait": "assets/profile.jpg",
-    "availability": "Open to meaningful opportunities"
-  },
-  "hero": {
-    "eyebrow": "PERSONAL PORTFOLIO · 2026",
-    "headline": "Precision in the details.<br>Purpose in every project.",
-    "intro": "I’m Mohammad Sabbir Hossain — an e-commerce operations professional with a growing interest in digital products, web experiences and AI-assisted building.",
-    "primaryLabel": "Explore my work",
-    "primaryHref": "#projects",
-    "secondaryLabel": "Get in touch",
-    "secondaryHref": "#contact"
-  },
-  "about": {
-    "eyebrow": "A LITTLE ABOUT ME",
-    "title": "A detail-oriented operator with a builder’s mindset.",
-    "body": "My professional experience is rooted in e-commerce product content and quality control. I work with product information, brand guidelines and accuracy at scale. Outside my day-to-day role, I enjoy turning ideas into practical digital experiences — combining curiosity, clear direction and AI-assisted tools to build and improve things.",
-    "note": "I value clarity, consistency, thoughtful execution and continuous learning."
-  },
-  "experience": [
-    {
-      "role": "Junior Executive",
-      "company": "STAFF UK · Client: BESTSECRET",
-      "period": "April 2025 — Present",
-      "location": "Bangladesh",
-      "description": "Supporting e-commerce product content operations, maintaining product information quality and following brand-specific content standards.",
-      "highlights": [
-        "Write and maintain descriptions for 70+ products per day across multiple categories.",
-        "Prepare product details including materials, features, measurements, patterns and categories.",
-        "Review 100+ product IDs for accuracy, consistency and brand compliance.",
-        "Identify discrepancies and coordinate corrections while meeting daily quality and productivity targets."
-      ],
-      "recognition": "Supportive Award — Office Management, STAFF UK"
-    }
-  ],
-  "projects": [
-    {
-      "name": "OPERVYN",
-      "type": "Independent digital initiative",
-      "status": "Ongoing",
-      "description": "An independent initiative exploring digital experiences, web design and practical technology projects. Built with an emphasis on thoughtful design and a 0% infrastructure-cost target.",
-      "highlights": [
-        "Custom-designed website",
-        "Custom CMS concept",
-        "AI-assisted planning and development"
-      ],
-      "link": "https://opervyn.github.io/",
-      "label": "Visit project",
-      "featured": "true"
-    },
-    {
-      "name": "Personal Portfolio & CMS",
-      "type": "Web development · GitHub Pages",
-      "status": "In development",
-      "description": "A personal portfolio designed to document professional experience and collect selected projects, supported by a GitHub-powered visual content editor.",
-      "highlights": [
-        "Responsive interface",
-        "Editable content",
-        "GitHub-based publishing"
-      ],
-      "link": "https://github.com/mohammadsabbir-hub",
-      "label": "GitHub profile",
-      "featured": "true"
-    }
-  ],
-  "skills": [
-    {
-      "group": "E-commerce operations",
-      "items": [
-        "Product content writing",
-        "Product data accuracy",
-        "Quality control",
-        "Brand guideline compliance",
-        "Product information review"
-      ]
-    },
-    {
-      "group": "Tools & workflow",
-      "items": [
-        "Google Sheets",
-        "Microsoft Excel (basic)",
-        "Microsoft Word & PowerPoint",
-        "Web-based technical image viewers",
-        "Internal brand description tools"
-      ]
-    },
-    {
-      "group": "Working strengths",
-      "items": [
-        "Attention to detail",
-        "Time and workload management",
-        "Problem solving",
-        "Team collaboration",
-        "Continuous learning"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "qualification": "Diploma in Computer Engineering",
-      "institution": "Islami Bank Institute of Technology (IBIT), Sylhet",
-      "period": "2023",
-      "result": "",
-      "board": "Bangladesh Technical Education Board"
-    },
-    {
-      "qualification": "Secondary School Certificate (SSC)",
-      "institution": "Sylhet Technical School and College",
-      "period": "2019",
-      "result": "",
-      "board": "Technical"
-    }
-  ],
-  "contact": {
-    "eyebrow": "LET’S CONNECT",
-    "title": "Have a project, opportunity or idea?",
-    "body": "I’m always interested in thoughtful conversations, opportunities to learn and projects that create something useful.",
-    "buttonLabel": "Send me an email"
+  "site_title": "Mohammad Sabbir | Portfolio & B2B Solutions",
+  "meta": {
+    "description": "Professional portfolio, data entry operations, and content management.",
+    "author": "Mohammad Sabbir"
   },
   "navigation": [
     {
-      "label": "About",
-      "href": "#about"
+      "title": "Home",
+      "slug": "home",
+      "url": "#home"
     },
     {
-      "label": "Experience",
-      "href": "#experience"
+      "title": "Services",
+      "slug": "services",
+      "url": "#services"
     },
     {
-      "label": "Projects",
-      "href": "#projects"
+      "title": "Portfolio",
+      "slug": "portfolio",
+      "url": "#portfolio"
     },
     {
-      "label": "Skills",
-      "href": "#skills"
-    },
-    {
-      "label": "Contact",
-      "href": "#contact"
+      "title": "Contact",
+      "slug": "contact",
+      "url": "#contact"
     }
   ],
-  "theme": {
-    "accent": "#b7f36b",
-    "background": "#10110f",
-    "surface": "#191b18",
-    "text": "#f1f2ec",
-    "muted": "#a3a69d"
-  },
-  "footer": {
-    "text": "Designed with intention. Built to keep evolving.",
-    "copyright": "© 2026 Mohammad Sabbir Hossain"
+  "pages": {
+    "home": {
+      "title": "Home",
+      "slug": "home",
+      "sections": [
+        {
+          "type": "hero",
+          "badge": "Available for B2B & Agency Support",
+          "headline": "E-Commerce Data Quality & Content Specialist",
+          "subheadline": "Delivering high-accuracy catalog management, product writing, and quality control workflows.",
+          "primary_btn_text": "View Projects",
+          "primary_btn_url": "#portfolio"
+        }
+      ]
+    }
   }
 }
