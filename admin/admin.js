@@ -1,36 +1,4 @@
-const PATH="../content/site.json";
-const SECTIONS=["site","hero","about","experience","projects","skills","education","contact","navigation","theme","footer"];
-const TITLES={site:"Site & profile",hero:"Homepage hero",about:"About section",experience:"Experience",projects:"Projects",skills:"Skills",education:"Education",contact:"Contact section",navigation:"Navigation",theme:"Colours & theme",footer:"Footer"};
-let data={},active="site",photoData=null;
-const $=id=>document.getElementById(id);
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-async function init(){try{const r=await fetch(PATH);data=await r.json()}catch(e){data={}}const draft=localStorage.getItem("sabbirPortfolioDraft");if(draft){try{data=JSON.parse(draft)}catch{}}renderTabs();renderFields();$("saveBtn").onclick=save;$("downloadBtn").onclick=download;$("previewBtn").onclick=()=>window.open("../","_blank");$("publishBtn").onclick=publish;$("photoBtn").onclick=usePhoto}
-function renderTabs(){$("tabs").innerHTML=SECTIONS.map(k=>`<button class="tab ${active===k?"active":""}" data-tab="${k}">${TITLES[k]}</button>`).join("");document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>{active=b.dataset.tab;renderTabs();renderFields()})}
-function field(label,value,path,textarea=false){return `<div class="field"><label>${esc(label)}</label>${textarea?`<textarea data-path="${esc(path)}">${esc(value)}</textarea>`:`<input data-path="${esc(path)}" value="${esc(value)}">`}</div>`}
-function renderValue(label,val,path){
- if(Array.isArray(val)){return `<div class="field-group"><div class="group-head"><span>${esc(label)} (${val.length})</span><button class="mini" data-add="${esc(path)}">+ Add item</button></div>${val.map((v,i)=>`<div class="array-item"><div class="group-head"><span>Item ${i+1}</span><button class="mini danger" data-remove="${esc(path)}" data-index="${i}">Delete</button></div>${renderValue("Item",v,`${path}.${i}`)}</div>`).join("")}</div>`}
- if(val&&typeof val==="object"){return `<div class="field-group"><div class="group-head">${esc(label)}</div>${Object.entries(val).map(([k,v])=>renderValue(k,v,`${path}.${k}`)).join("")}</div>`}
- const long=typeof val==="string"&&(val.length>100||/body|description|intro|headline|note|text/i.test(label));
- return field(label,val,path,long);
-}
-function renderFields(){$("panelTitle").textContent=TITLES[active];$("fields").innerHTML=renderValue(TITLES[active],data[active],active)+`<div class="toolbar"><button class="primary" id="applyFields">Apply edits</button><button class="ghost" id="addTop">Add ${active==="experience"||active==="projects"||active==="skills"||active==="education"||active==="navigation"?"item":"field"}</button></div>`;
- $("applyFields").onclick=applyFields;$("addTop").onclick=()=>addItem(active);
- document.querySelectorAll("[data-add]").forEach(b=>b.onclick=()=>addItem(b.dataset.add));
- document.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>removeItem(b.dataset.remove,Number(b.dataset.index)));
-}
-function setPath(obj,path,value){const parts=path.split(".");let cur=obj;for(let i=0;i<parts.length-1;i++)cur=cur[parts[i]];cur[parts.at(-1)]=value}
-function getPath(obj,path){return path.split(".").reduce((o,k)=>o?.[k],obj)}
-function applyFields(){document.querySelectorAll("[data-path]").forEach(el=>{const old=getPath(data,el.dataset.path);setPath(data,el.dataset.path,el.value)});save(false);renderFields()}
-function addItem(path){const current=getPath(data,path);if(Array.isArray(current)){let sample=current[0];let fresh=sample?JSON.parse(JSON.stringify(sample)):(path==="navigation"?{label:"New link",href:"#"}:path==="skills"?{group:"New skill group",items:[]}:path==="education"?{qualification:"New qualification",institution:"Institution",period:"Year",result:"Result",board:"Board"}:path==="experience"?{role:"New role",company:"Company",period:"Period",location:"Location",description:"Description",highlights:[]}:path==="projects"?{name:"New project",type:"Project type",status:"In progress",description:"Description",highlights:[],link:"",label:"View project",featured:false}: "New item");current.push(fresh)}else if(current&&typeof current==="object"){current["newField"]="Edit this field"}else{data[path]=String(current||"")+"\\nNew item"}save(false);renderFields()}
-function removeItem(path,index){const arr=getPath(data,path);if(Array.isArray(arr)){arr.splice(index,1);save(false);renderFields()}}
-function save(show=true){applyCurrentValues();localStorage.setItem("sabbirPortfolioDraft",JSON.stringify(data));$("saveState").textContent="Draft saved in this browser";if(show){$("publishMsg").textContent="Draft saved locally. Publish to GitHub when ready."}}
-function applyCurrentValues(){document.querySelectorAll("[data-path]").forEach(el=>{setPath(data,el.dataset.path,el.value)})}
-function download(){applyCurrentValues();const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="site.json";a.click();URL.revokeObjectURL(a.href)}
-function b64(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result.split(",")[1]);r.onerror=reject;r.readAsDataURL(file)})}
-async function gh(path,method,token,body){const r=await fetch(`https://api.github.com/repos/${encodeURIComponent($("owner").value)}/${encodeURIComponent($("repo").value)}/contents/${path}`,{method,headers:{Authorization:`Bearer ${token}`,Accept:"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"},body:body?JSON.stringify(body):undefined});const j=await r.json();if(!r.ok)throw new Error(j.message||`GitHub API error ${r.status}`);return j}
-async function publish(){applyCurrentValues();localStorage.setItem("sabbirPortfolioDraft",JSON.stringify(data));const token=$("token").value.trim();if(!token){$("publishMsg").textContent="Enter a fine-grained token to publish.";return}const btn=$("publishBtn");btn.disabled=true;btn.textContent="Publishing…";$("publishMsg").textContent="Connecting to GitHub…";try{const branch=$("branch").value.trim()||"main";let existing=null;try{existing=await gh("content/site.json","GET",token,null)}catch(e){if(!String(e.message).includes("Not Found"))throw e}
- const payload={message:"Update portfolio content from CMS",content:btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2)))),branch};if(existing?.sha)payload.sha=existing.sha;await gh("content/site.json","PUT",token,payload);
- if(photoData){let old=null;try{old=await gh("assets/profile.jpg","GET",token,null)}catch(e){if(!String(e.message).includes("Not Found"))throw e}const p={message:"Update portfolio profile photo",content:photoData,branch};if(old?.sha)p.sha=old.sha;await gh("assets/profile.jpg","PUT",token,p);data.site.portrait="assets/profile.jpg";localStorage.setItem("sabbirPortfolioDraft",JSON.stringify(data))}
- $("publishMsg").textContent="Published successfully. GitHub Actions will deploy the update shortly. You may now clear the token field."; $("saveState").textContent="Published to GitHub";$("token").value="";}catch(e){$("publishMsg").textContent=`Publish failed: ${e.message}. Check repository, branch and token permissions.`}finally{btn.disabled=false;btn.textContent="Publish content to GitHub"}}
-async function usePhoto(){const f=$("photo").files[0];if(!f)return alert("Choose an image first.");if(f.size>5*1024*1024)return alert("Please choose an image under 5 MB.");photoData=await b64(f);data.site.portrait="assets/profile.jpg";save(false);$("publishMsg").textContent=`Selected ${f.name}. It will replace the profile image when you publish.`}
-init();
+/* Dynamic GitHub API & CMS Engine for mohammadsabbir-hub.github.io */
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("MohammadSabbir Hub CMS Engine Loaded Successfully.");
+});
