@@ -124,7 +124,8 @@
     "eyebrow": "LET’S CONNECT",
     "title": "Have a project, opportunity or idea?",
     "body": "I’m always interested in thoughtful conversations, opportunities to learn and projects that create something useful.",
-    "buttonLabel": "Send me an email"
+    "buttonLabel": "Send me an email",
+    "newField": "This is a test."
   },
   "navigation": [
     {
