@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portfolio content schema",
+  "version": 1,
+  "pageBlocks": {
+    "hero": {"required": ["title", "body"], "fields": {"eyebrow":"text", "title":"text", "body":"longText", "buttonLabel":"text", "buttonHref":"url", "enabled":"boolean"}},
+    "text": {"required": ["title", "body"], "fields": {"eyebrow":"text", "title":"text", "body":"longText", "enabled":"boolean"}},
+    "featureGrid": {"required": ["title", "items"], "fields": {"eyebrow":"text", "title":"text", "items":"featureItems", "enabled":"boolean"}},
+    "testimonials": {"required": ["title", "items"], "fields": {"eyebrow":"text", "title":"text", "items":"testimonialItems", "enabled":"boolean"}},
+    "cta": {"required": ["title", "buttonLabel", "buttonHref"], "fields": {"eyebrow":"text", "title":"text", "body":"longText", "buttonLabel":"text", "buttonHref":"url", "enabled":"boolean"}}
+  },
+  "theme": {
+    "accent":"color", "background":"color", "surface":"color", "text":"color", "muted":"color"
+  },
+  "pageSlugPattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+}

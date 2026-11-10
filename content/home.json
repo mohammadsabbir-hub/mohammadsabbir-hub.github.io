@@ -1,0 +1,203 @@
+{
+  "site": {
+    "name": "Mohammad Sabbir Hossain",
+    "role": "E-commerce Operations | Product Content | Quality Control",
+    "location": "Sylhet, Bangladesh",
+    "email": "fxsabbirhossain@gmail.com",
+    "phone": "+8801330751277",
+    "linkedin": "https://linkedin.com/in/fxsabbirhossain",
+    "github": "https://github.com/mohammadsabbir-hub",
+    "opervyn": "https://opervyn.github.io",
+    "portrait": "assets/profile.jpg",
+    "availability": "Open to meaningful opportunities"
+  },
+  "hero": {
+    "eyebrow": "PERSONAL PORTFOLIO · 2026",
+    "headline": "Precision in the details.<br>Purpose in every project.",
+    "intro": "I’m Mohammad Sabbir Hossain — an e-commerce operations professional with a growing interest in digital products, web experiences and AI-assisted building.",
+    "primaryLabel": "Explore my work",
+    "primaryHref": "#projects",
+    "secondaryLabel": "Get in touch",
+    "secondaryHref": "#contact"
+  },
+  "about": {
+    "eyebrow": "A LITTLE ABOUT ME",
+    "title": "A detail-oriented operator with a builder’s mindset.",
+    "body": "My professional experience is rooted in e-commerce product content and quality control. I work with product information, brand guidelines and accuracy at scale. Outside my day-to-day role, I enjoy turning ideas into practical digital experiences — combining curiosity, clear direction and AI-assisted tools to build and improve things.",
+    "note": "I value clarity, consistency, thoughtful execution and continuous learning."
+  },
+  "experience": [
+    {
+      "role": "Junior Executive",
+      "company": "STAFF UK · Client: BESTSECRET",
+      "period": "April 2025 — Present",
+      "location": "Bangladesh",
+      "description": "Supporting e-commerce product content operations, maintaining product information quality and following brand-specific content standards.",
+      "highlights": [
+        "Write and maintain descriptions for 70+ products per day across multiple categories.",
+        "Prepare product details including materials, features, measurements, patterns and categories.",
+        "Review 100+ product IDs for accuracy, consistency and brand compliance.",
+        "Identify discrepancies and coordinate corrections while meeting daily quality and productivity targets."
+      ],
+      "recognition": "Supportive Award — Office Management, STAFF UK"
+    }
+  ],
+  "projects": [
+    {
+      "name": "OPERVYN",
+      "type": "Independent digital initiative",
+      "status": "Ongoing",
+      "description": "An independent initiative exploring digital experiences, web design and practical technology projects. Built with an emphasis on thoughtful design and a 0% infrastructure-cost target.",
+      "highlights": [
+        "Custom-designed website",
+        "Custom CMS concept",
+        "AI-assisted planning and development"
+      ],
+      "link": "https://opervyn.github.io/",
+      "label": "Visit project",
+      "featured": "true"
+    },
+    {
+      "name": "Personal Portfolio & CMS",
+      "type": "Web development · GitHub Pages",
+      "status": "In development",
+      "description": "A personal portfolio designed to document professional experience and collect selected projects, supported by a GitHub-powered visual content editor.",
+      "highlights": [
+        "Responsive interface",
+        "Editable content",
+        "GitHub-based publishing"
+      ],
+      "link": "https://github.com/mohammadsabbir-hub",
+      "label": "GitHub profile",
+      "featured": "true"
+    }
+  ],
+  "skills": [
+    {
+      "group": "E-commerce operations",
+      "items": [
+        "Product content writing",
+        "Product data accuracy",
+        "Quality control",
+        "Brand guideline compliance",
+        "Product information review"
+      ]
+    },
+    {
+      "group": "Tools & workflow",
+      "items": [
+        "Google Sheets",
+        "Microsoft Excel (basic)",
+        "Microsoft Word & PowerPoint",
+        "Web-based technical image viewers",
+        "Internal brand description tools"
+      ]
+    },
+    {
+      "group": "Working strengths",
+      "items": [
+        "Attention to detail",
+        "Time and workload management",
+        "Problem solving",
+        "Team collaboration",
+        "Continuous learning"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "qualification": "Diploma in Computer Engineering",
+      "institution": "Islami Bank Institute of Technology (IBIT), Sylhet",
+      "period": "2023",
+      "result": "",
+      "board": "Bangladesh Technical Education Board"
+    },
+    {
+      "qualification": "Secondary School Certificate (SSC)",
+      "institution": "Sylhet Technical School and College",
+      "period": "2019",
+      "result": "",
+      "board": "Technical"
+    }
+  ],
+  "contact": {
+    "eyebrow": "LET’S CONNECT",
+    "title": "Have a project, opportunity or idea?",
+    "body": "I’m always interested in thoughtful conversations, opportunities to learn and projects that create something useful.",
+    "buttonLabel": "Send me an email"
+  },
+  "theme": {
+    "accent": "#b7f36b",
+    "background": "#10110f",
+    "surface": "#191b18",
+    "text": "#f1f2ec",
+    "muted": "#a3a69d"
+  },
+  "footer": {
+    "text": "Designed with intention. Built to keep evolving.",
+    "copyright": "© 2026 Mohammad Sabbir Hossain"
+  },
+  "meta": {
+    "title": "Mohammad Sabbir Hossain — Portfolio",
+    "description": "The professional portfolio of Mohammad Sabbir Hossain — e-commerce operations, product content, quality control and digital projects.",
+    "language": "en"
+  },
+  "labels": {
+    "brandAria": "Home",
+    "loading": "Preparing the portfolio…",
+    "careerEyebrow": "CAREER HISTORY",
+    "careerTitle": "Experience built on consistency.",
+    "projectsEyebrow": "SELECTED WORK",
+    "projectsTitle": "Ideas, made tangible.",
+    "skillsEyebrow": "CAPABILITIES",
+    "skillsTitle": "Tools, skills and working strengths.",
+    "educationEyebrow": "EDUCATION",
+    "educationTitle": "Learning that shaped the foundation.",
+    "aboutIndex": "01 / PROFILE",
+    "experienceIndex": "02 / EXPERIENCE",
+    "projectsIndex": "03 / PROJECTS",
+    "skillsIndex": "04 / SKILLS",
+    "educationIndex": "05 / EDUCATION",
+    "navCta": "Let’s talk",
+    "navCtaArrow": "↗",
+    "contactLinkedin": "LINKEDIN ↗",
+    "contactGithub": "GITHUB ↗",
+    "contactOpervyn": "OPERVYN ↗",
+    "defaultProjectLabel": "View project",
+    "footerFallback": "",
+    "emailFallback": "Email me",
+    "brandMark": "S.",
+    "navAriaLabel": "Main navigation",
+    "notFoundEyebrow": "404 · PAGE NOT FOUND",
+    "notFoundTitle": "Page not found.",
+    "notFoundBody": "This page may have been removed or its address may have changed.",
+    "notFoundButton": "Return home",
+    "loadError": "Unable to load this page. Please refresh."
+  },
+  "sections": {
+    "about": {
+      "id": "about",
+      "enabled": true
+    },
+    "experience": {
+      "id": "experience",
+      "enabled": true
+    },
+    "projects": {
+      "id": "projects",
+      "enabled": true
+    },
+    "skills": {
+      "id": "skills",
+      "enabled": true
+    },
+    "education": {
+      "id": "education",
+      "enabled": true
+    },
+    "contact": {
+      "id": "contact",
+      "enabled": true
+    }
+  }
+}

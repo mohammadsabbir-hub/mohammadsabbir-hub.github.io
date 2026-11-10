@@ -1,40 +1,42 @@
-# Mohammad Sabbir Hossain — Personal Portfolio
+# Mohammad Sabbir Hossain — Personal Portfolio + CMS
 
-A static, GitHub Pages portfolio with a browser-based content editor.
+A static GitHub Pages portfolio with a browser-based JSON CMS. The visual theme remains defined in `assets/site.css`; content is data-driven and stored in `content/`.
 
 ## Repository setup
 
-For the root website URL `https://mohammadsabbir-hub.github.io`, create a repository named exactly:
+Use the repository named `mohammadsabbir-hub.github.io`. Upload the contents of this project folder to the repository root.
 
-`mohammadsabbir-hub.github.io`
+## GitHub Pages deployment
 
-Upload the contents of this folder to the repository root (not the containing folder).
-
-## Enable deployment
-
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment → Source**, select **GitHub Actions**.
-4. Push to the `main` branch. The workflow in `.github/workflows/deploy.yml` will publish the site.
+1. Open **Settings → Pages**.
+2. Under **Build and deployment → Source**, select **GitHub Actions**.
+3. Push the repository to the `main` branch. `.github/workflows/deploy.yml` runs `scripts/build.mjs` and deploys the generated `dist/` directory.
+4. Every push to `main`, including CMS JSON changes, triggers a build and deployment. The workflow can also be started manually from the Actions tab.
 
 ## CMS
 
-Open `/admin/` on the published website.
+Open `https://mohammadsabbir-hub.github.io/admin/` after deployment.
 
-- Edit the content groups and apply changes.
-- Drafts are saved in the current browser.
-- Export `site.json` as a backup.
-- To publish from the CMS, create a **fine-grained personal access token** restricted to this repository, with **Contents: Read and write** permission. Enter it in the CMS only when publishing. The token is not saved by the editor.
-- The CMS commits `content/site.json` and, if selected, `assets/profile.jpg` directly to GitHub.
+- **Homepage content:** edit the profile, hero, about, experience, projects, skills, education, contact, section labels and footer.
+- **Header & footer navigation:** manage links centrally in `content/navigation.json`.
+- **Page manager:** create, edit and delete slug-based pages. Pages use structured content blocks and share the site's global theme.
+- **Global theme:** update the existing CSS design tokens without editing CSS.
+- **Drafts:** saved in this browser. Export creates a JSON backup.
+- **Publishing:** enter a fine-grained GitHub personal access token restricted to this repository, with **Contents: Read and write** permission. The token is held in memory only and cleared after publishing. It is never saved in local storage or committed.
+- **Profile photo:** JPG, PNG or WebP up to 5 MB can be uploaded through the CMS.
 
-Never paste a token into a public file, commit it to the repository, or share it with anyone. Revoke it in GitHub settings if it is exposed.
+## Content architecture
 
-## Editing model
+- `content/home.json` — homepage content, labels, metadata, section visibility and theme values.
+- `content/navigation.json` — global header, footer and CTA links.
+- `content/pages/index.json` — manifest of published custom pages.
+- `content/pages/<slug>.json` — content blocks and metadata for each custom page.
+- `content/site.json` — retained legacy source for backwards compatibility and fallback.
 
-The public site is rendered from `content/site.json`. The CMS provides structured editing for all content groups, including lists such as projects, experience, education, skills and navigation. Theme colours and the profile photo can also be changed.
+Custom pages support `hero`, `text`, `featureGrid`, `testimonials` and `cta` blocks. They use the same site stylesheet, header, footer and theme tokens. The build script creates `/<slug>/index.html` for each page in the manifest. Deleting a page removes its JSON source and it is omitted from the next generated Pages artifact.
 
-This is a no-backend static CMS: drafts are local to the browser; GitHub is the publishing destination. A future enhancement can add direct click-to-edit page canvas controls and richer block/layout editing.
+## Security and compatibility
 
-## Current content
+This is a no-backend static CMS. GitHub is the publishing destination; GitHub Actions builds static files for GitHub Pages. Do not paste a token into repository files or share it. Revoke exposed tokens in GitHub settings. The CMS requires a browser with JavaScript and network access to GitHub's API.
 
-Initial content is based on the CV information supplied for this portfolio. Review all dates, links, details and wording before publishing. The profile photo is the supplied outdoor portrait.
+The original homepage content and theme values are retained. The renderer now reads content from `home.json`; `site.json` remains available as a legacy fallback. Existing sections and project data have been migrated without changing their wording or design tokens.

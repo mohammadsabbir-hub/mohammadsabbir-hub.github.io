@@ -1,0 +1,14 @@
+{
+  "header": [
+    {"label":"About","href":"#about","enabled":true},
+    {"label":"Experience","href":"#experience","enabled":true},
+    {"label":"Projects","href":"#projects","enabled":true},
+    {"label":"Skills","href":"#skills","enabled":true},
+    {"label":"Contact","href":"#contact","enabled":true}
+  ],
+  "footer": [
+    {"label":"LinkedIn","href":"https://linkedin.com/in/fxsabbirhossain","enabled":true},
+    {"label":"GitHub","href":"https://github.com/mohammadsabbir-hub","enabled":true}
+  ],
+  "cta": {"label":"Let’s talk","href":"#contact","enabled":true}
+}
