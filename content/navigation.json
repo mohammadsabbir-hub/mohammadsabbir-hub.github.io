@@ -1,16 +1,56 @@
 {
   "header": [
-    {"label":"About","href":"#about","enabled":true},
-    {"label":"Services","href":"#services","enabled":true},
-    {"label":"Process","href":"#workflow","enabled":true},
-    {"label":"Experience","href":"#experience","enabled":true},
-    {"label":"Projects","href":"#projects","enabled":true},
-    {"label":"Contact","href":"#contact","enabled":true}
+    {
+      "label": "About",
+      "href": "#about",
+      "enabled": true
+    },
+    {
+      "label": "Services",
+      "href": "#services",
+      "enabled": true
+    },
+    {
+      "label": "Process",
+      "href": "#workflow",
+      "enabled": true
+    },
+    {
+      "label": "Experience",
+      "href": "#experience",
+      "enabled": true
+    },
+    {
+      "label": "Projects",
+      "href": "#projects",
+      "enabled": true
+    },
+    {
+      "label": "Contact",
+      "href": "#contact",
+      "enabled": true
+    }
   ],
   "footer": [
-    {"label":"LinkedIn","href":"https://linkedin.com/in/fxsabbirhossain","enabled":true},
-    {"label":"GitHub","href":"https://github.com/mohammadsabbir-hub","enabled":true},
-    {"label":"ABLEHARBOR","href":"https://ableharbor.github.io/","enabled":true}
+    {
+      "label": "LinkedIn",
+      "href": "https://linkedin.com/in/fxsabbirhossain",
+      "enabled": true
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/mohammadsabbir-hub",
+      "enabled": false
+    },
+    {
+      "label": "ABLEHARBOR",
+      "href": "https://ableharbor.github.io/",
+      "enabled": true
+    }
   ],
-  "cta": {"label":"Let's talk","href":"#contact","enabled":true}
+  "cta": {
+    "label": "Let's talk",
+    "href": "#contact",
+    "enabled": true
+  }
 }
