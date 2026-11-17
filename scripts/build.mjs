@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -30,7 +31,18 @@ const home = JSON.parse(fs.readFileSync(homeFile, 'utf8'));
 if (!home.site?.name || !home.hero?.headline) throw new Error('Homepage is missing required profile or hero content.');
 const manifestFile = path.join(root, 'content', 'pages', 'index.json');
 const manifest = fs.existsSync(manifestFile) ? JSON.parse(fs.readFileSync(manifestFile, 'utf8')) : { pages: [] };
-const template = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const assetHash = relativePath => crypto
+  .createHash('sha256')
+  .update(fs.readFileSync(path.join(root, relativePath)))
+  .digest('hex')
+  .slice(0, 12);
+
+const cssVersion = assetHash('assets/site.css');
+const jsVersion = assetHash('assets/site.js');
+const template = fs.readFileSync(path.join(root, 'index.html'), 'utf8')
+  .replace('/assets/site.css', `/assets/site.css?v=${cssVersion}`)
+  .replace('/assets/site.js', `/assets/site.js?v=${jsVersion}`);
+fs.writeFileSync(path.join(output, 'index.html'), template);
 const validSlug = slug => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug);
 const seen = new Set();
 for (const page of manifest.pages || []) {
