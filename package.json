@@ -1,0 +1,8 @@
+{
+  "name": "sabbir-portfolio-2",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}

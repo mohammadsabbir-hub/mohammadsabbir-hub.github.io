@@ -1,42 +1,58 @@
-# Mohammad Sabbir Hossain — Personal Portfolio + CMS
+# Sabbir Portfolio 2.0
 
-A static GitHub Pages portfolio with a browser-based JSON CMS. The visual theme remains defined in `assets/site.css`; content is data-driven and stored in `content/`.
+A premium dark, responsive personal portfolio for Mohammad Sabbir Hossain, paired with a custom browser-based JSON CMS. The website presents two independent service tracks: e-commerce data entry/product content and AI-assisted digital building with custom CMS delivery.
 
-## Repository setup
+## Hosting architecture
 
-Use the repository named `mohammadsabbir-hub.github.io`. Upload the contents of this project folder to the repository root.
+- **Source of truth:** GitHub repository `mohammadsabbir-hub.github.io`.
+- **Static hosting:** Cloudflare Pages (Free plan).
+- **Build:** `npm run build` (no third-party dependencies); output directory `dist`.
+- **CMS:** `/admin/`, a static browser application that publishes content through the GitHub Git Data API.
+- **Deployment:** Connect the GitHub repository to Cloudflare Pages using Git integration. Every pushed commit triggers a new build and deployment.
+- **Content:** JSON files under `content/`; profile image under `assets/`.
 
-## GitHub Pages deployment
+## Cloudflare Pages setup
 
-1. Open **Settings → Pages**.
-2. Under **Build and deployment → Source**, select **GitHub Actions**.
-3. Push the repository to the `main` branch. `.github/workflows/deploy.yml` runs `scripts/build.mjs` and deploys the generated `dist/` directory.
-4. Every push to `main`, including CMS JSON changes, triggers a build and deployment. The workflow can also be started manually from the Actions tab.
+1. In Cloudflare, open **Workers & Pages → Create → Pages → Connect to Git**.
+2. Connect GitHub and select `mohammadsabbir-hub/mohammadsabbir-hub.github.io`.
+3. Set production branch to `main`.
+4. Set build command to `npm run build` and build output directory to `dist`.
+5. Save and deploy. Cloudflare will build and host the generated static site.
+6. In the Pages project, add `sabbir.dpdns.org` as a custom domain. Complete the DNS validation Cloudflare requests. The domain's DNS zone must be managed/delegated to Cloudflare for the standard Pages custom-domain flow.
 
-## CMS
+Cloudflare Pages Free currently has documented limits, including up to 500 builds per month, one concurrent build, 20,000 files per site and 25 MiB per individual asset. Check Cloudflare's current limits before accepting unusually high-traffic or asset-heavy client projects.
 
-Open `https://mohammadsabbir-hub.github.io/admin/` after deployment.
+## CMS access and publishing
 
-- **Homepage content:** edit the profile, hero, about, experience, projects, skills, education, contact, section labels and footer.
-- **Header & footer navigation:** manage links centrally in `content/navigation.json`.
-- **Page manager:** create, edit and delete slug-based pages. Pages use structured content blocks and share the site's global theme.
-- **Global theme:** update the existing CSS design tokens without editing CSS.
-- **Drafts:** saved in this browser. Export creates a JSON backup.
-- **Publishing:** enter a fine-grained GitHub personal access token restricted to this repository, with **Contents: Read and write** permission. The token is held in memory only and cleared after publishing. It is never saved in local storage or committed.
-- **Profile photo:** JPG, PNG or WebP up to 5 MB can be uploaded through the CMS.
+Open `https://sabbir.dpdns.org/admin/` after Cloudflare Pages and the custom domain are configured.
 
-## Content architecture
+- Edit profile, hero, about, services, prices, client workflow, experience, projects, skills, education, contact, navigation, theme and section visibility.
+- Create and manage additional static pages.
+- Save drafts locally in the current browser.
+- Preview drafts without publishing using the **Preview draft** control.
+- Export a JSON content backup.
+- Publish with a fine-grained GitHub personal access token restricted to this repository and **Contents: Read and write** permission.
+- The token is held in memory only and cleared after publishing. It is not written to local storage or committed.
+- Publishing creates one Git commit containing all content changes (and an optional profile image update), reducing unnecessary deployment builds.
 
-- `content/home.json` — homepage content, labels, metadata, section visibility and theme values.
-- `content/navigation.json` — global header, footer and CTA links.
-- `content/pages/index.json` — manifest of published custom pages.
-- `content/pages/<slug>.json` — content blocks and metadata for each custom page.
-- `content/site.json` — retained legacy source for backwards compatibility and fallback.
+## Local build and verification
 
-Custom pages support `hero`, `text`, `featureGrid`, `testimonials` and `cta` blocks. They use the same site stylesheet, header, footer and theme tokens. The build script creates `/<slug>/index.html` for each page in the manifest. Deleting a page removes its JSON source and it is omitted from the next generated Pages artifact.
+Requirements: Node.js 20 or newer.
 
-## Security and compatibility
+```bash
+npm run build
+```
 
-This is a no-backend static CMS. GitHub is the publishing destination; GitHub Actions builds static files for GitHub Pages. Do not paste a token into repository files or share it. Revoke exposed tokens in GitHub settings. The CMS requires a browser with JavaScript and network access to GitHub's API.
+The generated static site is written to `dist/`. No package installation is required.
 
-The original homepage content and theme values are retained. The renderer now reads content from `home.json`; `site.json` remains available as a legacy fallback. Existing sections and project data have been migrated without changing their wording or design tokens.
+## Pricing and service positioning
+
+The public content currently presents data entry at **$3.99/hour** and a portfolio + custom CMS standard package at **$99 one-time**, with a simpler starter scope from $69. These are editable in the CMS. The $99 package should remain scope-defined; domains, email services, paid integrations, custom backend features and work outside the included scope are not included by default.
+
+## Security and operating notes
+
+- This is a static CMS, not a private multi-user database application. Anyone with the admin URL can open the CMS interface, but publishing requires a repository-scoped GitHub token.
+- Never paste a token into repository files or share it. Use a fine-grained token restricted to this repository, with only Contents read/write access. Revoke the token if exposed.
+- The CMS token is sent to GitHub's API from the browser only when you publish.
+- Keep the GitHub repository private if source visibility is not desired; verify that the chosen GitHub plan and Cloudflare integration support your intended repository configuration.
+- No recurring Cloudflare Pages or CMS subscription is required within free-tier limits. A custom domain, email service, paid integrations or usage beyond free limits may still incur costs.

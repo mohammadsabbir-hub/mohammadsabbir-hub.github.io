@@ -1,38 +1,103 @@
 {
   "site": {
     "name": "Mohammad Sabbir Hossain",
-    "role": "E-commerce Operations | Product Content | Quality Control",
+    "role": "Independent Data Entry Agent & Digital Builder",
     "location": "Sylhet, Bangladesh",
     "email": "fxsabbirhossain@gmail.com",
     "phone": "+8801330751277",
     "linkedin": "https://linkedin.com/in/fxsabbirhossain",
     "github": "https://github.com/mohammadsabbir-hub",
-    "opervyn": "https://opervyn.github.io",
-    "portrait": "assets/profile.jpg",
-    "availability": "Open to meaningful opportunities"
+    "ableharbor": "https://ableharbor.github.io/",
+    "portrait": "/assets/profile.jpg",
+    "availability": "Open to international client projects"
   },
   "hero": {
-    "eyebrow": "PERSONAL PORTFOLIO · 2026",
-    "headline": "Precision in the details.<br>Purpose in every project.",
-    "intro": "I’m Mohammad Sabbir Hossain — an e-commerce operations professional with a growing interest in digital products, web experiences and AI-assisted building.",
-    "primaryLabel": "Explore my work",
-    "primaryHref": "#projects",
-    "secondaryLabel": "Get in touch",
-    "secondaryHref": "#contact"
+    "eyebrow": "INDEPENDENT AGENT · E-COMMERCE · DIGITAL BUILDING",
+    "headline": "Reliable work.\nThoughtful building.",
+    "highlight": "Thoughtful building.",
+    "intro": "I'm Mohammad Sabbir Hossain — an independent data entry agent focused on e-commerce product content and quality control, with a passion for turning ideas into practical digital systems using AI.",
+    "primaryLabel": "Explore my services",
+    "primaryHref": "#services",
+    "secondaryLabel": "See selected work",
+    "secondaryHref": "#projects",
+    "metaLeft": "AVAILABLE FOR INTERNATIONAL CLIENTS",
+    "metaRight": "SYLHET, BANGLADESH"
   },
   "about": {
     "eyebrow": "A LITTLE ABOUT ME",
-    "title": "A detail-oriented operator with a builder’s mindset.",
-    "body": "My professional experience is rooted in e-commerce product content and quality control. I work with product information, brand guidelines and accuracy at scale. Outside my day-to-day role, I enjoy turning ideas into practical digital experiences — combining curiosity, clear direction and AI-assisted tools to build and improve things.",
-    "note": "I value clarity, consistency, thoughtful execution and continuous learning."
+    "title": "I learn the process before I do the work.",
+    "lead": "Every client has a different workflow. I believe good work starts by understanding it.",
+    "body": "My professional experience is rooted in e-commerce product content and quality control. I currently work with a luxury e-commerce brand, writing product descriptions and checking product information against specific standards. As an independent agent, I want to work with international clients on their own requirements: first understand the brief, review a demonstration, complete the training and then prove the workflow through a free sample task. Outside data operations, I'm a technology enthusiast who enjoys turning ideas into useful websites and custom CMS systems with AI-assisted tools.",
+    "note": "CLIENT-FIRST · DETAIL-ORIENTED · AI-FRIENDLY"
+  },
+  "services": [
+    {
+      "number": "01",
+      "name": "Data Entry & E-commerce Operations",
+      "description": "Accurate, guideline-led support for product information workflows. I adapt to your process instead of assuming every data entry task is the same.",
+      "items": [
+        "Product description writing",
+        "Product data entry and organization",
+        "Product information review",
+        "Quality control and consistency checks",
+        "Brand guideline compliance"
+      ],
+      "price": "$3.99 / hour",
+      "priceNote": "One sample task included after briefing and training"
+    },
+    {
+      "number": "02",
+      "name": "Digital Building & Custom CMS",
+      "description": "Practical portfolio websites with a custom content management system, planned around your needs and built with an AI-assisted workflow.",
+      "items": [
+        "Personal portfolio websites",
+        "Custom CMS dashboard",
+        "GitHub + Cloudflare deployment",
+        "AI-assisted planning and development",
+        "Zero mandatory monthly hosting or CMS fee"
+      ],
+      "price": "$69–$99",
+      "priceNote": "Standard portfolio + CMS package: $99 one-time"
+    }
+  ],
+  "workflow": [
+    {
+      "number": "01",
+      "title": "Client briefing",
+      "description": "You explain the task, expected output, quality standards and working requirements."
+    },
+    {
+      "number": "02",
+      "title": "Demonstration & training",
+      "description": "You demonstrate the workflow and provide the instructions or training needed to follow it correctly."
+    },
+    {
+      "number": "03",
+      "title": "Free sample task",
+      "description": "I complete one sample task using the process you demonstrated."
+    },
+    {
+      "number": "04",
+      "title": "Review & approval",
+      "description": "You review the sample for accuracy, consistency and fit with your expectations."
+    },
+    {
+      "number": "05",
+      "title": "Start collaboration",
+      "description": "If the result works for both sides, we agree on the scope and begin paid work."
+    }
+  ],
+  "freeTrial": {
+    "title": "A sample before a commitment.",
+    "body": "I offer one free sample task after your briefing and training, so you can evaluate my work against your own process before we start working together."
   },
   "experience": [
     {
-      "role": "Junior Executive",
+      "role": "Junior Executive · Product Content & Quality Control",
       "company": "STAFF UK · Client: BESTSECRET",
       "period": "April 2025 — Present",
       "location": "Bangladesh",
-      "description": "Supporting e-commerce product content operations, maintaining product information quality and following brand-specific content standards.",
+      "description": "Supporting product content operations for a luxury e-commerce brand, writing product descriptions and maintaining product information quality against brand-specific standards.",
       "highlights": [
         "Write and maintain descriptions for 70+ products per day across multiple categories.",
         "Prepare product details including materials, features, measurements, patterns and categories.",
@@ -44,40 +109,45 @@
   ],
   "projects": [
     {
-      "name": "OPERVYN",
-      "type": "Independent digital initiative",
-      "status": "Ongoing",
-      "description": "An independent initiative exploring digital experiences, web design and practical technology projects. Built with an emphasis on thoughtful design and a 0% infrastructure-cost target.",
+      "name": "ABLEHARBOR",
+      "type": "Website · Custom CMS ecosystem",
+      "status": "Live",
+      "description": "An independent digital initiative built around a custom-designed website and CMS ecosystem. It explores how a complete digital presence can be planned and delivered using AI-assisted development and a zero-cost infrastructure approach.",
       "highlights": [
-        "Custom-designed website",
-        "Custom CMS concept",
-        "AI-assisted planning and development"
+        "Custom-designed responsive website",
+        "Custom content management system",
+        "GitHub-powered content workflow",
+        "Zero-cost infrastructure approach"
       ],
-      "link": "https://opervyn.github.io/",
-      "label": "Visit project",
-      "featured": "true"
+      "link": "https://ableharbor.github.io/",
+      "label": "Visit live website",
+      "featured": true,
+      "image": ""
     },
     {
-      "name": "Personal Portfolio & CMS",
-      "type": "Web development · GitHub Pages",
-      "status": "In development",
-      "description": "A personal portfolio designed to document professional experience and collect selected projects, supported by a GitHub-powered visual content editor.",
+      "name": "Sabbir Portfolio 2.0",
+      "type": "Personal portfolio · Custom CMS",
+      "status": "Redesign in progress",
+      "description": "A personal professional portfolio being rebuilt as a data-driven website with a custom CMS, allowing content, services, projects and selected design settings to be managed without editing source code.",
       "highlights": [
-        "Responsive interface",
-        "Editable content",
-        "GitHub-based publishing"
+        "CMS-managed content architecture",
+        "GitHub repository as content source",
+        "Cloudflare Pages deployment",
+        "AI-assisted design and execution"
       ],
       "link": "https://github.com/mohammadsabbir-hub",
-      "label": "GitHub profile",
-      "featured": "true"
+      "label": "Explore GitHub profile",
+      "featured": true,
+      "image": ""
     }
   ],
   "skills": [
     {
-      "group": "E-commerce operations",
+      "group": "E-commerce & data operations",
       "items": [
-        "Product content writing",
-        "Product data accuracy",
+        "Product description writing",
+        "Product data entry",
+        "Product information accuracy",
         "Quality control",
         "Brand guideline compliance",
         "Product information review"
@@ -94,9 +164,21 @@
       ]
     },
     {
+      "group": "Digital building & AI",
+      "items": [
+        "AI-assisted development",
+        "Website planning",
+        "Custom CMS concepts",
+        "GitHub workflows",
+        "Cloudflare Pages",
+        "Zero-cost infrastructure planning"
+      ]
+    },
+    {
       "group": "Working strengths",
       "items": [
         "Attention to detail",
+        "Client-specific process adaptation",
         "Time and workload management",
         "Problem solving",
         "Team collaboration",
@@ -121,82 +203,72 @@
     }
   ],
   "contact": {
-    "eyebrow": "LET’S CONNECT",
-    "title": "Have a project, opportunity or idea?",
-    "body": "I’m always interested in thoughtful conversations, opportunities to learn and projects that create something useful.",
-    "buttonLabel": "Send me an email"
+    "eyebrow": "LET'S CONNECT",
+    "title": "Have a workflow or an idea to build?",
+    "body": "Tell me what you need. For data entry, we'll begin with your briefing and training. For a digital project, we'll discuss the scope and the simplest reliable way to bring it to life.",
+    "buttonLabel": "Start a conversation"
   },
   "theme": {
-    "accent": "#b7f36b",
-    "background": "#10110f",
-    "surface": "#191b18",
-    "text": "#f1f2ec",
-    "muted": "#a3a69d"
+    "accent": "#c5ff4a",
+    "background": "#090b09",
+    "surface": "#111511",
+    "text": "#f2f5ed",
+    "muted": "#9aa398"
   },
   "footer": {
-    "text": "Designed with intention. Built to keep evolving.",
+    "text": "Thoughtful work. Practical systems. Built with intention.",
     "copyright": "© 2026 Mohammad Sabbir Hossain"
   },
   "meta": {
-    "title": "Mohammad Sabbir Hossain — Portfolio",
-    "description": "The professional portfolio of Mohammad Sabbir Hossain — e-commerce operations, product content, quality control and digital projects.",
+    "title": "Mohammad Sabbir Hossain — Independent Agent & Digital Builder",
+    "description": "Independent data entry agent for e-commerce product content and quality control. AI-assisted portfolio websites and custom CMS development.",
     "language": "en"
   },
   "labels": {
-    "brandAria": "Home",
-    "loading": "Preparing the portfolio…",
-    "careerEyebrow": "CAREER HISTORY",
-    "careerTitle": "Experience built on consistency.",
+    "loading": "Preparing the portfolio",
+    "aboutEyebrow": "A LITTLE ABOUT ME",
+    "servicesEyebrow": "WHAT I CAN HELP WITH",
+    "servicesTitle": "Two capabilities. One client-first approach.",
+    "workflowEyebrow": "HOW I WORK",
+    "workflowTitle": "Understand the process. Then deliver.",
+    "experienceEyebrow": "PROFESSIONAL EXPERIENCE",
+    "experienceTitle": "Experience built on accuracy and consistency.",
     "projectsEyebrow": "SELECTED WORK",
     "projectsTitle": "Ideas, made tangible.",
     "skillsEyebrow": "CAPABILITIES",
     "skillsTitle": "Tools, skills and working strengths.",
     "educationEyebrow": "EDUCATION",
     "educationTitle": "Learning that shaped the foundation.",
-    "aboutIndex": "01 / PROFILE",
-    "experienceIndex": "02 / EXPERIENCE",
-    "projectsIndex": "03 / PROJECTS",
-    "skillsIndex": "04 / SKILLS",
-    "educationIndex": "05 / EDUCATION",
-    "navCta": "Let’s talk",
-    "navCtaArrow": "↗",
     "contactLinkedin": "LINKEDIN ↗",
     "contactGithub": "GITHUB ↗",
-    "contactOpervyn": "OPERVYN ↗",
+    "contactAbleharbor": "ABLEHARBOR ↗",
     "defaultProjectLabel": "View project",
-    "footerFallback": "",
-    "emailFallback": "Email me",
-    "brandMark": "S.",
-    "navAriaLabel": "Main navigation",
-    "notFoundEyebrow": "404 · PAGE NOT FOUND",
-    "notFoundTitle": "Page not found.",
-    "notFoundBody": "This page may have been removed or its address may have changed.",
-    "notFoundButton": "Return home",
-    "loadError": "Unable to load this page. Please refresh."
+    "brandAria": "Sabbir — home",
+    "navAriaLabel": "Main navigation"
   },
   "sections": {
     "about": {
-      "id": "about",
+      "enabled": true
+    },
+    "services": {
+      "enabled": true
+    },
+    "workflow": {
       "enabled": true
     },
     "experience": {
-      "id": "experience",
       "enabled": true
     },
     "projects": {
-      "id": "projects",
       "enabled": true
     },
     "skills": {
-      "id": "skills",
       "enabled": true
     },
     "education": {
-      "id": "education",
       "enabled": true
     },
     "contact": {
-      "id": "contact",
       "enabled": true
     }
   }
