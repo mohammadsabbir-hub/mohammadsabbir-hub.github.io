@@ -139,6 +139,20 @@
       "label": "Current Live Site",
       "featured": true,
       "image": ""
+    },
+    {
+      "name": "GetSiteview",
+      "type": "Browser-based tool · Static web app",
+      "status": "• Live",
+      "description": "A zero-install preview tool that turns a zipped website into a working, browsable site inside the browser. Drop in a .zip of HTML, CSS, JavaScript and images and it renders instantly at desktop, tablet and phone widths — no upload, no server, no account.",
+      "highlights": [
+        "• Runs entirely in-browser",
+        "• Drag-and-drop zip preview",
+        "• Device-width switching"
+      ],
+      "link": "https://getsiteview.netlify.app/",
+      "label": "View project",
+      "featured": true
     }
   ],
   "skills": [
