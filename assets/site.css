@@ -9,3 +9,29 @@
 @media(max-width:900px){.site-header{gap:12px}.main-nav{gap:16px}.brand{min-width:175px}.hero{gap:25px;min-height:610px}.orbital{width:320px;height:320px}.workflow{grid-template-columns:repeat(3,1fr)}.workflow-step:nth-child(3){border-right:0}.workflow-step:nth-child(n+4){border-top:1px solid var(--line)}.about-grid{gap:45px}.skills-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){html{scroll-padding-top:72px}.site-header{height:70px;padding:0 20px}.brand{min-width:0}.brand-word{font-size:9px}.header-cta{display:none}.menu-toggle{display:block;order:3}.main-nav{display:none;position:absolute;top:69px;left:0;right:0;padding:18px 22px 24px;background:#0d110d;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.main-nav.open{display:flex}.main-nav a{padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.wrap{width:calc(100% - 40px)}.hero{grid-template-columns:1fr;padding:78px 0 80px;gap:40px;min-height:0}.hero h1{font-size:clamp(46px,13vw,68px);margin:21px 0}.hero-copy{font-size:14px}.hero-meta{margin-top:35px;flex-wrap:wrap}.hero-visual{min-height:340px}.orbital{width:300px;height:300px}.portrait-shell{width:220px}.portrait-caption{left:-15px;bottom:15px}.visual-index{right:8px}.section{padding:76px 0}.section-head{margin-bottom:35px}.section-head h2{font-size:34px}.about-grid{grid-template-columns:1fr;gap:20px}.about-lead{font-size:23px}.service-grid,.project-grid,.education-list{grid-template-columns:1fr}.service-card{min-height:310px;padding:25px}.workflow{grid-template-columns:1fr}.workflow-step{min-height:0;padding:21px;border-right:0;border-bottom:1px solid var(--line)}.workflow-step:nth-child(n){border-right:0;border-top:0}.workflow-step:last-child{border-bottom:0}.workflow-step h3{margin:12px 0 6px}.experience-card{grid-template-columns:1fr;gap:15px;padding:25px 0}.bullet-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.contact-panel{grid-template-columns:1fr;padding:30px 23px;gap:24px}.contact-panel .button{width:100%}.site-footer{padding:24px 20px 30px;flex-direction:column;align-items:flex-start}.education-item{padding:20px}.section-index{display:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+/* =========================================
+   STICKY HEADER NAVIGATION
+   Keeps navigation visible while scrolling
+========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+}
+
+/* Keep navigation accessible on mobile */
+@media (max-width: 680px) {
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: var(--bg);
+    }
+
+    .main-nav {
+        z-index: 1001;
+    }
+}
